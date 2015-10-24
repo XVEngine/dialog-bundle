@@ -1,7 +1,7 @@
 {
     "name": "xvengine/dialog-bundle",
     "description": "Dialog Bundle",
-	"type" : "xvengine-bundle"
+	"type" : "xvengine-bundle",
     "authors": [
         {
             "name": "Krzysztof Bednarczyk",
