@@ -1,4 +1,4 @@
-.dialog-displayed, .menu-displayed, .notifications-displayed {
+.dialog-displayed {
   overflow-y: hidden;
   height: 100%;
 
@@ -7,7 +7,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: auto; /* iOS position:fixed; elements fix (not 100%) */
+    bottom: -1px; /* iOS position:fixed; elements fix (not 100%) */
     min-height: 100%;
   }
 }
@@ -135,5 +135,11 @@ xv-dialog {
         }
       }
     }
+  }
+
+
+
+  &.dialog-message {
+
   }
 }

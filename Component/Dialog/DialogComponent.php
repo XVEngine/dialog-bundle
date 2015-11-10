@@ -7,7 +7,7 @@ use XVEngine\Core\Component\AbstractComponent;
 class DialogComponent extends AbstractComponent {
 
     
-    public function initialize() {
+    protected function initialize() {
         $this->setComponentName('dialog.dialogComponent');
     }
 

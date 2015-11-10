@@ -3,7 +3,7 @@
 
     namespace.dialogComponent = app.newClass({
         extend: function () {
-            return app.components.abstractComponent;
+            return app.core.component.abstractComponent;
         }
     });
     
@@ -75,17 +75,6 @@
         this.createScrollRule();
         this.bindEvents();
         var self = this;
-        delete Hammer.defaults.cssProps.userSelect;
-        //if($('html').is('.touch')) {
-        //    this.$element.hammer().bind('panup', function () {
-        //        if (self.$element.scrollTop() + self.$element.height() >= self.$dialogWindow.height()) {
-        //            self.close();
-        //
-        //        }
-        //    });
-        //    this.$element.data('hammer').get('pan').set({ threshold: 30 });
-        //}
-
        this.onScroll();
 
 
