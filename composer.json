@@ -16,5 +16,6 @@
         "psr-0": {
             "XVEngine\\Bundle\\DialogBundle" : ""
         }
-    }
+    },
+    "target-dir": "XVEngine/Bundle/DialogBundle"
 }
