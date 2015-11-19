@@ -4,12 +4,10 @@
 namespace XVEngine\Bundle\DialogBundle\Utils;
 
 
-use XVEngine\Bundle\ButtonBundle\Component\Button\ButtonComponent;
 use XVEngine\Bundle\DialogBundle\Component\Dialog\DialogComponent;
 use XVEngine\Bundle\HTMLBundle\Component\Utils\HtmlComponent;
 use XVEngine\Bundle\HTMLBundle\Component\Utils\HtmlComponentItem;
 use XVEngine\Core\Component\AbstractComponent;
-use XVEngine\Core\Handler\ActionHandler;
 use XVEngine\Core\Handler\ServiceHandler;
 
 class DialogMessage {
@@ -118,6 +116,7 @@ class DialogMessage {
             return $this;
         }
         $view = new HtmlComponent();
+        $view->addClass("mb10px");
         $view->setHTML("
             <h1> {$header} </h1>
         ");
@@ -152,7 +151,7 @@ class DialogMessage {
         $id = 1;
         foreach($this->buttons as  $button){
             $html .= "<button-{$id}></button-{$id}>";
-            $view->addItem(new HtmlComponentItem("> button-{$id}", $button->getView()));
+            $view->addItem(new HtmlComponentItem("> button-{$id}", $button->getView(), true));
             $id++;
         }
 
@@ -179,6 +178,7 @@ class DialogMessage {
      * @return $this
      */
     public function addButton(DialogMessageButton $button){
+        $button->setDialogId($this->id);
         $this->buttons[] = $button;
         return $this;
     }

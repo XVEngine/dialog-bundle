@@ -141,5 +141,13 @@ xv-dialog {
 
   &.dialog-message {
 
+    .actions-btns {
+      margin-top: 10px;
+      float: right;
+
+      .btn {
+        margin-left: 10px;
+      }
+    }
   }
 }

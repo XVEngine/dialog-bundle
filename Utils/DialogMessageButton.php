@@ -28,6 +28,10 @@ class DialogMessageButton {
      */
     protected $handler;
 
+    /**
+     * @var string
+     */
+    protected $dialogId;
 
     /**
      * DialogMessageButton constructor.
@@ -61,6 +65,32 @@ class DialogMessageButton {
         $this->id = $id;
         return $this;
     }
+
+    /**
+     * Get dialogId value
+     * @author Krzysztof Bednarczyk
+     * @return string
+     */
+    public function getDialogId()
+    {
+        return $this->dialogId;
+    }
+
+    /**
+     * Set dialogId value
+     * @author Krzysztof Bednarczyk
+     * @param string $dialogId
+     * @return  $this
+     */
+    public function setDialogId($dialogId)
+    {
+        $this->dialogId = $dialogId;
+        return $this;
+    }
+
+
+
+
 
     /**
      * Get label value
@@ -97,7 +127,7 @@ class DialogMessageButton {
     /**
      * Set handler value
      * @author Krzysztof Bednarczyk
-     * @param AbstractHandler $handler
+     * @param AbstractHandler|array $handler
      * @return  $this
      */
     public function setHandler($handler)
@@ -141,7 +171,7 @@ class DialogMessageButton {
 
 
         $view->on("onClick", function(){
-            $action = new ActionHandler($this->id);
+            $action = new ActionHandler($this->getDialogId());
             $action->close();
             return $action;
         }, $this);
